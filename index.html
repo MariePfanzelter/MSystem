@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roadmap Learning System</title>
+    <meta
+      name="description"
+      content="Einfaches Roadmap-Setup für Lerninhalte, Videos, Links und Ressourcen."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand" aria-label="Brand">
+          <span class="brand-mark">M</span>
+          <div>
+            <p class="mini-label">Roadmap</p>
+            <h1>System-Setup</h1>
+          </div>
+        </div>
+
+        <div class="topbar-progress" aria-label="Fortschritt der Roadmap">
+          <span>Fortschritt</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <strong id="progressText">1 / 7</strong>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Dein Lernpfad</p>
+          <h2>Schritt für Schritt zum Ziel</h2>
+        </div>
+        <div class="hero-badge" id="heroBadge">6 Module • 1–2h pro Schritt</div>
+      </section>
+
+      <main class="roadmap-layout">
+        <nav class="step-rail" aria-label="Roadmap-Übersicht">
+          <button class="step-card is-active" type="button" data-step="1">
+            <span class="step-badge">1</span>
+            <span class="step-copy">
+              <strong>Ziele &amp; Grundlagen</strong>
+              <small>Startklar und vorbereitet</small>
+            </span>
+          </button>
+
+          <button class="step-card" type="button" data-step="2">
+            <span class="step-badge">2</span>
+            <span class="step-copy">
+              <strong>Mindset &amp; Syntra</strong>
+              <small>Vertrauen aufbauen</small>
+            </span>
+          </button>
+
+          <button class="step-card" type="button" data-step="3">
+            <span class="step-badge">3</span>
+            <span class="step-copy">
+              <strong>Basic Onboarding Trading</strong>
+              <small>Die ersten Grundlagen</small>
+            </span>
+          </button>
+
+          <button class="step-card" type="button" data-step="4">
+            <span class="step-badge">4</span>
+            <span class="step-copy">
+              <strong>Time &amp; Money Management</strong>
+              <small>Disziplin und Struktur</small>
+            </span>
+          </button>
+
+          <button class="step-card" type="button" data-step="5">
+            <span class="step-badge">5</span>
+            <span class="step-copy">
+              <strong>SageMaster</strong>
+              <small>Erste Automationen</small>
+            </span>
+          </button>
+
+          <button class="step-card" type="button" data-step="6">
+            <span class="step-badge">6</span>
+            <span class="step-copy">
+              <strong>Marketing</strong>
+              <small>Erste Schritte sichtbar machen</small>
+            </span>
+          </button>
+          
+           <button class="step-card" type="button" data-step="7">
+            <span class="step-badge">7</span>
+            <span class="step-copy">
+              <strong>Next Steps</strong>
+              <small>Weitere Roadmaps</small>
+            </span>
+          </button>
+        </nav>
+
+        <section class="detail-panel" aria-live="polite">
+          <div class="detail-header">
+            <span class="detail-number" id="detailNumber">1</span>
+            <div class="detail-copy">
+              <p class="detail-kicker" id="detailKicker">Schritt 1</p>
+              <h3 id="detailTitle">Ziele &amp; Grundlagen</h3>
+            </div>
+          </div>
+
+          <div class="detail-content">
+            <div class="info-block">
+              <h4>Was du hier lernst</h4>
+              <p id="detailDescription">
+                Definiere deine Ziele, sammle die wichtigsten Grundlagen und baue die erste Struktur auf, damit du ohne Verwirrung und mit klarer Richtung loslegen kannst.
+              </p>
+            </div>
+
+            <div class="info-grid">
+              <article class="info-box">
+                <h5>Video &amp; Erklärungen</h5>
+                <ul id="videoList"></ul>
+              </article>
+
+              <article class="info-box">
+                <h5>Materialien</h5>
+                <ul id="materialList"></ul>
+              </article>
+            </div>
+          </div>
+
+          <div class="detail-footer">
+            <button class="btn secondary" id="prevStep" type="button">Zurück</button>
+            <button class="btn primary" id="nextStep" type="button">Nächster Schritt</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

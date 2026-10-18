@@ -6,12 +6,12 @@ const steps = {
     description:
       'Definiere deine Ziele, sammle die wichtigsten Grundlagen und baue die erste Struktur auf, damit du ohne Verwirrung und mit klarer Richtung loslegen kannst.',
     videos: [
-      { label: 'Warum Ziele wichtig sind', url: 'https://www.youtube.com/results?search_query=zielsetzung+grundlagen+lernen' },
-      { label: 'Einführung in die Grundlagen', url: 'https://www.youtube.com/results?search_query=grundlagen+lernen+einfach+erkl%C3%A4rt' }
+      { label: 'Dein Warum', url: 'https://youtu.be/NcCipJMRw7U' },
+      { label: 'SMART Ziele', url: 'https://youtu.be/cif-9paADHo' }
     ],
     materials: [
-      { label: 'Ziel-Checkliste', tag: 'PDF', url: 'https://www.canva.com/' },
-      { label: 'Grundlagen-Template', tag: 'DOC', url: 'https://notion.so/' }
+      { label: 'SMART-Ziele Vorlage', tag: 'Canva', url: 'https://canva.link/9of6od2nzcwcreb' },
+      { label: 'Visionboard erstellen', tag: 'Pinterest', url: 'https://www.pinterest.com/' }
     ]
   },
   2: {
@@ -118,8 +118,95 @@ const progressText = document.getElementById('progressText');
 const heroBadge = document.getElementById('heroBadge');
 const prevStepBtn = document.getElementById('prevStep');
 const nextStepBtn = document.getElementById('nextStep');
+const customDetailContent = document.getElementById('customDetailContent');
 
 let currentStep = 1;
+
+function renderCustomStepContent(stepId) {
+  if (stepId !== 1) {
+    customDetailContent.innerHTML = '';
+    return;
+  }
+
+  customDetailContent.innerHTML = `
+    <div class="step-detail-steps">
+      <article class="task-step-card">
+        <div class="task-step-head">
+          <span class="step-pill">Schritt 1</span>
+          <h4>Dein Warum</h4>
+        </div>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/NcCipJMRw7U"
+            title="Dein Warum"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="task-copy">
+          Schau dir dieses Video an und nimm dir 30 Minuten Zeit, um deine tiefsten Träume und Visionen aufzuschreiben.
+        </p>
+        <div class="task-note">
+          <strong>Aufgabe:</strong>
+          <span>Schreibe deine tiefsten Träume, Wünsche und Lebensvisionen ohne Filter auf.</span>
+        </div>
+      </article>
+
+      <article class="task-step-card">
+        <div class="task-step-head">
+          <span class="step-pill">Schritt 2</span>
+          <h4>Definiere deine Ziele</h4>
+        </div>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/cif-9paADHo"
+            title="Definiere deine Ziele"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="task-copy">
+          Nimm dir wiederum 30 Minuten Zeit und schreibe deine Ziele für unterschiedliche Lebensbereiche auf. Formuliere sie so konkret wie möglich und lege fest, bis wann du sie erreichen möchtest.
+        </p>
+        <div class="task-note accent">
+          <strong>Nutze die Vorlage:</strong>
+          <a href="https://canva.link/9of6od2nzcwcreb" target="_blank" rel="noopener noreferrer">SMART ZIELE</a>
+        </div>
+      </article>
+
+      <article class="task-step-card vision-card">
+        <div class="task-step-head">
+          <span class="step-pill">Schritt 3</span>
+          <h4>Entwickle deine Vision</h4>
+        </div>
+        <div class="visionboard-layout">
+          <div class="visionboard-preview" aria-label="Visionboard Vorschau">
+            <span>Dreams</span>
+            <span>Growth</span>
+            <span>Freedom</span>
+            <span>Success</span>
+          </div>
+          <div class="visionboard-copy">
+            <p>
+              Erstelle mit Pinterest und Canva ein Visionboard, auf dem du deine Ziele und Träume sichtbar machst. Platziere es an einem Ort, an dem du es täglich siehst.
+            </p>
+            <p>
+              Sende dein fertiges Visionboard an deine Mentorin und füge es hier in deine Roadmap ein.
+            </p>
+            <div class="vision-links">
+              <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a>
+              <a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Canva</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  `;
+}
 
 function renderResources(items, parentElement, type) {
   parentElement.innerHTML = '';
@@ -160,6 +247,7 @@ function renderStep(stepId) {
   progressFill.style.width = `${(step.number / 7) * 100}%`;
   heroBadge.textContent = `7 Module • ${step.number}/7 aktiv`;
 
+  renderCustomStepContent(stepId);
   renderResources(step.videos, videoList, 'video');
   renderResources(step.materials, materialList, 'material');
 

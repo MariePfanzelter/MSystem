@@ -793,14 +793,19 @@ const doneCount = (tasks) => tasks.filter((t) => done.has(t.id)).length;
 const allRequired = () => phases.flatMap(required);
 
 // Deepdive ist erst nach dem kompletten Onboarding freigeschaltet
-const deepdiveUnlocked = () => allRequired().every((t) => done.has(t.id));
+// Hauptschalter: false = Deepdive ist für alle gesperrt (auch nach dem Onboarding).
+// Auf true setzen, sobald der Deepdive freigegeben werden soll.
+const DEEPDIVE_OPEN = false;
+
+const deepdiveUnlocked = () => DEEPDIVE_OPEN && allRequired().every((t) => done.has(t.id));
 
 function lockedHint() {
+  if (!DEEPDIVE_OPEN) return 'Der Deepdive ist aktuell noch gesperrt und wird bald freigeschaltet. Konzentrier dich bis dahin auf dein Onboarding.';
   const all = allRequired();
   return `Der Deepdive wird freigeschaltet, sobald du dein Onboarding abgeschlossen hast (${doneCount(all)}/${all.length} To-dos erledigt).`;
 }
 
-function toast(msg) {
+function toast(msg, icon = 'lock') {
   let el = $('#toast');
   if (!el) {
     el = document.createElement('div');
@@ -809,7 +814,7 @@ function toast(msg) {
     el.setAttribute('role', 'status');
     document.body.appendChild(el);
   }
-  el.innerHTML = `${svg('lock')}<span>${msg}</span>`;
+  el.innerHTML = `${svg(icon)}<span>${msg}</span>`;
   el.classList.add('is-visible');
   clearTimeout(toast.t);
   toast.t = setTimeout(() => el.classList.remove('is-visible'), 4200);
@@ -1273,6 +1278,7 @@ document.addEventListener('click', (e) => {
   const toggle = e.target.closest('[data-panel]');
   if (toggle) setPanel(toggle.dataset.panel === 'open');
   if (e.target.closest('#icsBtn')) downloadIcs();
+  if (e.target.closest('#installBtn')) installApp();
   if (e.target.closest('#resetBtn') && confirm('Wirklich alle Häkchen zurücksetzen?')) {
     done = new Set();
     saveDone();
@@ -1336,3 +1342,39 @@ function downloadIcs() {
 }
 
 render();
+
+// ─────────────────────────────────────────────────────────────
+//  APP (PWA): Offline-Speicher + „Als App installieren“
+// ─────────────────────────────────────────────────────────────
+
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+
+let installPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  installPrompt = e;
+});
+
+const isStandalone = () =>
+  window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+function installApp() {
+  if (isStandalone()) return toast('Du nutzt das Onboarding bereits als App.', 'phone');
+  if (installPrompt) {
+    installPrompt.prompt();
+    installPrompt = null;
+    return;
+  }
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  toast(
+    ios
+      ? 'iPhone: Öffne die Seite in Safari, tippe unten auf „Teilen“ und dann auf „Zum Home-Bildschirm“.'
+      : 'Tippe im Browser-Menü (⋮) auf „App installieren“ bzw. „Zum Startbildschirm hinzufügen“.',
+    'phone'
+  );
+}
+
+if (isStandalone()) document.documentElement.classList.add('is-app');
+

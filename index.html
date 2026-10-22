@@ -6,6 +6,16 @@
     <title>Rise Beyond · Onboarding</title>
     <meta name="description" content="Deine Onboarding-Roadmap bei Rise Beyond – Schritt für Schritt zum Start." />
     <meta name="theme-color" content="#f7f1e8" />
+
+    <!-- App (PWA) -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="assets/icons/favicon-64.png" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Onboarding" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,6 +47,7 @@
     <footer class="footer">
       <span>© Rise Beyond · Dein Fortschritt wird auf diesem Gerät gespeichert.</span>
       <span class="footer-links">
+        <button type="button" class="link-btn" id="installBtn">Als App installieren</button>
         <a href="https://www.instagram.com/risebeyondxtpr/" target="_blank" rel="noopener">Instagram</a>
         <button type="button" class="link-btn" id="resetBtn">Fortschritt zurücksetzen</button>
       </span>

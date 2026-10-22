@@ -2502,3 +2502,12 @@ button.after-label:hover {
   font-size: 0.8rem;
   font-weight: 700;
 }
+
+/* Als installierte App: Platz für Statusleiste / Notch, kein Installieren-Link */
+.topbar {
+  padding-top: max(12px, env(safe-area-inset-top));
+}
+
+.is-app #installBtn {
+  display: none;
+}

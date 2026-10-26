@@ -1,7 +1,7 @@
 // Offline-Speicher für die Onboarding-App.
 // Eigene Dateien: erst aus dem Cache anzeigen, im Hintergrund aktualisieren.
 // Nach Änderungen an der Seite VERSION erhöhen, damit alle die neue Version bekommen.
-const VERSION = 'rb-onboarding-v1';
+const VERSION = 'rb-onboarding-v39';
 
 const APP_SHELL = [
   './',
@@ -13,12 +13,13 @@ const APP_SHELL = [
   'assets/icons/icon-512.png',
   'assets/icons/apple-touch-icon.png',
   'assets/icons/favicon-64.png',
+  'assets/logo-rise-beyond.png',
   'assets/logos/syntra.jpg',
   'assets/logos/mt5.jpg',
   'assets/logos/deepsage.png',
   'assets/logos/wow.png',
   'assets/logos/sagemaster.png',
-  'assets/logos/discord.jpg'
+  'assets/logos/telegram.jpg'
 ];
 
 self.addEventListener('install', (event) => {

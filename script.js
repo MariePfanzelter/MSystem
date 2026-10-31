@@ -642,178 +642,136 @@ const mindsetTabs = [
 // Persönlichkeitsentwicklung: Podcasts & YouTube nach Themen
 const peGroups = [
   {
-    id: 'pe-pers',
-    title: 'Persönlichkeit & Selbstvertrauen',
+    id: 'pe-mindset',
+    title: 'Mindset & Motivation',
     tab: 'podcasts',
     items: [
-      {
-        title: 'Der Mindset Podcast',
-        sub: 'Christian Bischoff',
-        platform: 'spotify',
-        url: 'https://open.spotify.com/show/2kg4qXNobBcz1kmn6tABBC',
-        thumb: 'https://i.scdn.co/image/ab6765630000ba8afd98aee8ab46b79f9bbbe5f4'
-      },
-      {
-        title: 'happy, holy & confident',
-        sub: 'Laura Malina Seiler',
-        platform: 'spotify',
-        url: 'https://open.spotify.com/show/4j5GudABjEkHhAsQDyggbN',
-        thumb: 'https://i.scdn.co/image/ab6765630000ba8ae51bdfa1697b3eeffb13ff74'
-      },
-      {
-        title: 'selbstvertraut wachsen',
-        sub: 'Mindset & Erfolg für Frauen',
-        platform: 'spotify',
-        url: 'https://open.spotify.com/show/2yH1dEWHwW1BKmLmHkh58a',
-        thumb: 'https://i.scdn.co/image/ab6765630000ba8a7d57c8c3c46de74bc28d71f8'
-      }
+      { title: 'Der Mindset Podcast', sub: 'Christian Bischoff', platform: 'spotify', url: 'https://open.spotify.com/show/2kg4qXNobBcz1kmn6tABBC', thumb: 'https://i.scdn.co/image/ab6765630000ba8afd98aee8ab46b79f9bbbe5f4' },
+      { title: 'Tobias Beck Podcast', sub: 'Tobias Beck', platform: 'spotify', url: 'https://open.spotify.com/show/6YolMZfv1zAbVHWJfzbnWK', thumb: 'https://i.scdn.co/image/ab6765630000ba8aea77766dfe06fa0003f58c0e' },
+      { title: 'Greator Podcast – It’s in you', sub: 'Greator', platform: 'spotify', url: 'https://open.spotify.com/show/3XkvMJarpTgdpPOB0BVSZ6', thumb: 'https://i.scdn.co/image/ab6765630000ba8a04c52ac649fec8b1078aece6' }
     ]
   },
   {
-    id: 'pe-geld',
+    id: 'pe-female',
+    title: 'Weiblichkeit & Selbstliebe',
+    tab: 'podcasts',
+    items: [
+      { title: 'The Female Code', sub: 'Cheraz Bero', platform: 'spotify', url: 'https://open.spotify.com/show/3wGVCIL3J4SYdTrN9gka7s', thumb: 'https://i.scdn.co/image/ab6765630000ba8a00f50b85acf57d530680f508' },
+      { title: 'Hot Soul by Emskopf', sub: 'Emely', platform: 'spotify', url: 'https://open.spotify.com/show/1okP4v4KonZ66VuaO0my4y', thumb: 'https://i.scdn.co/image/ab6765630000ba8a949e9caacf71a02bcbb40c63' }
+    ]
+  },
+  {
+    id: 'pe-hoerbuecher',
+    title: 'Hörbücher',
+    tab: 'podcasts',
+    items: [
+      { title: 'Karriere mit System', sub: 'Bodo Schäfer · Hörbuch', platform: 'spotify', url: 'https://open.spotify.com/album/6QWE7DdqWQfXjVNRRARa7y', thumb: 'https://i.scdn.co/image/ab67616d0000b27355d41ed48069b5e503df9ee2' },
+      { title: 'In 7 Jahren Ihre erste Million', sub: 'Bodo Schäfer · Hörbuch', platform: 'spotify', url: 'https://open.spotify.com/album/6QkbiES7ng3mQVa5W7Hdd4', thumb: 'https://i.scdn.co/image/ab67616d0000b2734a17a0779e62c50ef033eb24' },
+      { title: 'Erfolgreich denken', sub: 'Bodo Schäfer · Hörbuch', platform: 'spotify', url: 'https://open.spotify.com/album/0qpSzGE2wffrMOOXlMap1e', thumb: 'https://i.scdn.co/image/ab67616d0000b2735dbf8babffc4ac2afe5d74e8' },
+      { title: 'Die Kunst, Ihre Zeit zu führen', sub: 'Bodo Schäfer · Hörbuch', platform: 'spotify', url: 'https://open.spotify.com/album/221plRU2UefwNtXajLGrFo', thumb: 'https://i.scdn.co/image/ab67616d0000b273a9e2ea33b35dbb4f32937fe4' },
+      { title: 'Mentale Alchemie', sub: 'Bodo Schäfer · Hörbuch', platform: 'spotify', url: 'https://open.spotify.com/album/07dtBuE1Wes52k6gk491WN', thumb: 'https://i.scdn.co/image/ab67616d0000b273e1e074964eaf9f3c086072d6' },
+      { title: 'Endlich mehr verdienen', sub: '20 % mehr Einkommen in einem Jahr · Hörbuch', platform: 'spotify', url: 'https://open.spotify.com/album/6yehyqrpzquI87iezDAC83', thumb: 'https://i.scdn.co/image/ab67616d0000b2738c79c46869da006d73782a95' }
+    ]
+  },
+  {
+    id: 'pe-yt-disziplin',
+    title: 'Disziplin & Produktivität',
+    tab: 'youtube',
+    items: [
+      { title: 'Psychology of Discipline', sub: 'PsychToons', platform: 'youtube', url: 'https://www.youtube.com/watch?v=CkP_8bkjf1E', thumb: 'https://i.ytimg.com/vi/CkP_8bkjf1E/mqdefault.jpg' },
+      { title: 'How to ACTUALLY be Productive (even if you lack discipline)', sub: 'Leila Hormozi', platform: 'youtube', url: 'https://www.youtube.com/watch?v=IbVUxbSQtGk', thumb: 'https://i.ytimg.com/vi/IbVUxbSQtGk/mqdefault.jpg' },
+      { title: 'You\'re Not Behind: My System for Outworking Everyone', sub: 'Alex Hormozi', platform: 'youtube', url: 'https://www.youtube.com/watch?v=gD0X-PLax5I', thumb: 'https://i.ytimg.com/vi/gD0X-PLax5I/mqdefault.jpg' },
+      { title: 'How to Stop Wasting Your Life (No More Distractions)', sub: 'Dan Martell', platform: 'youtube', url: 'https://www.youtube.com/watch?v=OqVuu_JpBag', thumb: 'https://i.ytimg.com/vi/OqVuu_JpBag/mqdefault.jpg' },
+      { title: 'How to Be So Productive it Feels ILLEGAL', sub: 'Dan Martell', platform: 'youtube', url: 'https://www.youtube.com/watch?v=hSGt_rhu49U', thumb: 'https://i.ytimg.com/vi/hSGt_rhu49U/mqdefault.jpg' },
+      { title: 'The Brutal Truth About Time Management No One Wants to Hear', sub: 'Nextlevel Wellness', platform: 'youtube', url: 'https://www.youtube.com/watch?v=XPEDJun8G_E', thumb: 'https://i.ytimg.com/vi/XPEDJun8G_E/mqdefault.jpg' },
+      { title: 'Das japanische System, um JEDE schlechte Gewohnheit zu brechen', sub: 'Produktivikus', platform: 'youtube', url: 'https://www.youtube.com/watch?v=eG6N6W56vK0', thumb: 'https://i.ytimg.com/vi/eG6N6W56vK0/mqdefault.jpg' },
+      { title: 'If You’re Serious About 2027, Start These 7 Habits Now', sub: 'Knowspire', platform: 'youtube', url: 'https://www.youtube.com/watch?v=kYL80BzP-AI', thumb: 'https://i.ytimg.com/vi/kYL80BzP-AI/mqdefault.jpg' }
+    ]
+  },
+  {
+    id: 'pe-yt-routinen',
+    title: 'Routinen',
+    tab: 'youtube',
+    items: [
+      { title: 'I tried the top 1% woman morning routine & it kinda changed my life', sub: 'Christina Mychas', platform: 'youtube', url: 'https://www.youtube.com/watch?v=AjgjegPEr2c', thumb: 'https://i.ytimg.com/vi/AjgjegPEr2c/mqdefault.jpg' },
+      { title: 'TOP 1% WOMAN ROUTINE: How I Stay Productive, Healthy & Balanced', sub: 'Dr Faye Bate', platform: 'youtube', url: 'https://www.youtube.com/watch?v=ymVkv3GFzN0', thumb: 'https://i.ytimg.com/vi/ymVkv3GFzN0/mqdefault.jpg' },
+      { title: 'Priming: the daily habit Tony Robbins uses to boost his brain', sub: 'Tony Robbins', platform: 'youtube', url: 'https://www.youtube.com/watch?v=faTGTgid8Uc', thumb: 'https://i.ytimg.com/vi/faTGTgid8Uc/mqdefault.jpg' }
+    ]
+  },
+  {
+    id: 'pe-yt-mindset',
+    title: 'Mindset & Manifestation',
+    tab: 'youtube',
+    items: [
+      { title: 'So gewinnst du DAS SPIEL der Manifestation | 11 Regeln', sub: 'Mindset by Tasi', platform: 'youtube', url: 'https://www.youtube.com/watch?v=tPb-ix1yHLI', thumb: 'https://i.ytimg.com/vi/tPb-ix1yHLI/mqdefault.jpg' },
+      { title: 'Change Your Mindset ft. Mel Robbins', sub: 'Khloé in Wonder Land · Khloé Kardashian', platform: 'youtube', url: 'https://www.youtube.com/watch?v=_QhA6n5Axy4', thumb: 'https://i.ytimg.com/vi/_QhA6n5Axy4/mqdefault.jpg' },
+      { title: 'This video will make you more money than anything else on the Internet', sub: 'Alex Hormozi', platform: 'youtube', url: 'https://www.youtube.com/watch?v=4GjwtnA76ig', thumb: 'https://i.ytimg.com/vi/4GjwtnA76ig/mqdefault.jpg' },
+      { title: 'The Law of Attraction Explained', sub: 'Proctor Gallagher Institute', platform: 'youtube', url: 'https://www.youtube.com/watch?v=5zvnFM2BXqY', thumb: 'https://i.ytimg.com/vi/5zvnFM2BXqY/mqdefault.jpg' },
+      { title: 'How to Change a Paradigm', sub: 'Bob Proctor', platform: 'youtube', url: 'https://www.youtube.com/watch?v=IOn3Ay0Uiio', thumb: 'https://i.ytimg.com/vi/IOn3Ay0Uiio/mqdefault.jpg' }
+    ]
+  }
+];
+
+// Persönlichkeitsentwicklung: Bücher grob nach Themen (deutsche Ausgaben, asin = ISBN-10)
+// Ohne asin: eigene url angeben, es erscheint das gestaltete Ersatz-Cover
+const peShelves = [
+  {
     title: 'Geld & Vermögen',
-    tab: 'podcasts',
-    items: [
-      {
-        title: 'Finanzfluss Podcast',
-        sub: 'Geldanlage & Finanzen',
-        platform: 'spotify',
-        url: 'https://open.spotify.com/show/6YkiGMyRqAkoKISsTu96bo',
-        thumb: 'https://i.scdn.co/image/ab6765630000ba8a1eaede4b70dd6697c0e108b0'
-      },
-      {
-        title: 'Own it. Der Female Finance Podcast',
-        sub: 'Madame Moneypenny',
-        platform: 'spotify',
-        url: 'https://open.spotify.com/show/4ii7YHR5Q7t7gbqFgv5Fpe',
-        thumb: 'https://i.scdn.co/image/ab6765630000ba8a7d85753c7d5d7a5779adb60d'
-      }
+    text: 'Wie Geld funktioniert und wie du Vermögen aufbaust.',
+    books: [
+      books.richdad,
+      books.psychologie,
+      books.denke,
+      books.cashflow,
+      books.reicher
     ]
   },
   {
-    id: 'pe-brand',
-    title: 'Vermarktung & Personal Branding',
-    tab: 'podcasts',
-    items: [
-      {
-        title: 'Be Your Brand',
-        sub: 'Personal Branding & PR',
-        platform: 'spotify',
-        url: 'https://open.spotify.com/show/6fk0gp8CFL0J7oWsYtsxtK',
-        thumb: 'https://i.scdn.co/image/ab6765630000ba8ab72ab45e4f8e748643058314'
-      },
-      {
-        title: 'MARKE MENSCH',
-        sub: 'Sichtbarkeit & Personal Branding',
-        platform: 'spotify',
-        url: 'https://open.spotify.com/show/1dOpJ8MaUzHtJ295dF317Q',
-        thumb: 'https://i.scdn.co/image/ab6765630000ba8ad3e1941cd9a3986874e78cbc'
-      },
-      {
-        title: 'Teaching Socials Podcast',
-        sub: 'Social Media aufbauen',
-        platform: 'spotify',
-        url: 'https://open.spotify.com/show/1SWpmnHiypPIYcMRdDuYOe',
-        thumb: 'https://i.scdn.co/image/ab6765630000ba8a78d6bd5726e4dbd89c1c74d3'
-      }
+    title: 'Network Marketing & Business',
+    text: 'Unternehmergeist, Network Marketing und das richtige Umfeld.',
+    books: [
+      books.business,
+      { title: 'Monkey see, monkey do', author: 'Anselm Fischer', asin: '3969830117' },
+      { title: 'Der Schlüssel zum Erfolg', author: 'Berthold Güntner', asin: '3837006360' },
+      { title: 'Entscheidung: Umfeld', author: 'Dirk Kreuter', asin: '3987551585' },
+      { title: 'The Diary of a CEO', author: 'Steven Bartlett', asin: '3424202959' },
+      { title: 'Shoe Dog', author: 'Phil Knight', asin: '3960923945' }
     ]
   },
   {
-    id: 'pe-yt-pers',
-    title: 'Persönlichkeit & Selbstvertrauen',
-    tab: 'youtube',
-    items: [
-      {
-        title: 'Selbstvertrauen',
-        sub: 'Christian Bischoff',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=hwII4hceGq8',
-        thumb: 'https://i.ytimg.com/vi/hwII4hceGq8/mqdefault.jpg'
-      },
-      {
-        title: 'Wie du über dich denkst, bestimmt dein ganzes Leben',
-        sub: 'Christian Bischoff im Gespräch',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=eIbm9F0MwLU',
-        thumb: 'https://i.ytimg.com/vi/eIbm9F0MwLU/mqdefault.jpg'
-      },
-      {
-        title: 'Du bist für dein Glück verantwortlich',
-        sub: 'Christian Bischoff',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=Zlr_QiuAZcI',
-        thumb: 'https://i.ytimg.com/vi/Zlr_QiuAZcI/mqdefault.jpg'
-      },
-      {
-        title: 'Wirklichkeit verändern',
-        sub: 'Vera F. Birkenbihl',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=rQ5YYZo9WEc',
-        thumb: 'https://i.ytimg.com/vi/rQ5YYZo9WEc/mqdefault.jpg'
-      },
-      {
-        title: 'Was tun, wenn die Energie fehlt',
-        sub: 'Vera F. Birkenbihl',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=FbjFmL4t-3w',
-        thumb: 'https://i.ytimg.com/vi/FbjFmL4t-3w/mqdefault.jpg'
-      }
+    title: 'Gewohnheiten & Disziplin',
+    text: 'Routinen, Durchhaltevermögen und ein ruhiger Kopf im Alltag.',
+    books: [
+      books.methode,
+      { title: 'Der 5-Uhr-Club', author: 'Robin Sharma', asin: '3426293005' },
+      { title: 'Mach dein Bett', author: 'William H. McRaven', asin: '3742305158' },
+      { title: 'Kompromisslos – Relentless', author: 'Tim S. Grover', asin: '3959722753' },
+      { title: 'Wie man unstressbar wird', author: 'Mo Gawdat & Alice Law', asin: '386881969X' }
     ]
   },
   {
-    id: 'pe-yt-geld',
-    title: 'Geld & finanzielle Freiheit',
-    tab: 'youtube',
-    items: [
-      {
-        title: 'Die 6 Lektionen über Geld',
-        sub: 'Bodo Schäfer',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=bMDdSQ5hx3U',
-        thumb: 'https://i.ytimg.com/vi/bMDdSQ5hx3U/mqdefault.jpg'
-      },
-      {
-        title: 'Durchbruch zum finanziellen Erfolg',
-        sub: 'Bodo Schäfer',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=D-m37gPhMLE',
-        thumb: 'https://i.ytimg.com/vi/D-m37gPhMLE/mqdefault.jpg'
-      },
-      {
-        title: 'Der Weg zur finanziellen Freiheit',
-        sub: 'Dirk Kreuter trifft Bodo Schäfer',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=0WTibUnbY40',
-        thumb: 'https://i.ytimg.com/vi/0WTibUnbY40/mqdefault.jpg'
-      },
-      {
-        title: 'Finanzielle Intelligenz ist der Schlüssel zu echter Freiheit',
-        sub: 'Bodo Schäfer im Gespräch',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=YQM9mj9lvvU',
-        thumb: 'https://i.ytimg.com/vi/YQM9mj9lvvU/mqdefault.jpg'
-      }
+    title: 'Mindset & Denken',
+    text: 'Groß denken, klar entscheiden und gelassen bleiben.',
+    books: [
+      { title: 'Denken Sie groß!', author: 'David J. Schwartz', asin: '3424201057' },
+      books.gewinner,
+      { title: 'Die subtile Kunst des Daraufscheißens', author: 'Mark Manson', asin: '3868828117' },
+      { title: 'Die LET THEM Theorie', author: 'Mel Robbins', asin: '3442180651' },
+      { title: 'Die vier Versprechen', author: 'Don Miguel Ruiz', asin: '3548066429' },
+      { title: 'Mut – Das Glück ist mit dem Tapferen', author: 'Ryan Holiday', asin: '3959724888' },
+      { title: 'The Secret – Das Geheimnis', author: 'Rhonda Byrne', asin: '344234221X' },
+      { title: 'Die 7 Säulen der Persönlichkeitsentwicklung', author: 'Ben Klarstein', asin: '3989370103' },
+      { title: 'Wer klar denkt, entscheidet besser', author: 'Shane Parrish', asin: '3442180074' },
+      { title: 'Schnelles Denken, langsames Denken', author: 'Daniel Kahneman', asin: '3328100342' }
     ]
   },
   {
-    id: 'pe-yt-mot',
-    title: 'Motivation & Erfüllung',
-    tab: 'youtube',
-    items: [
-      {
-        title: 'Motivation und 1000 Geschichten',
-        sub: 'Lars Amend · live',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=rWQabdz6O7k',
-        thumb: 'https://i.ytimg.com/vi/rWQabdz6O7k/mqdefault.jpg'
-      },
-      {
-        title: 'So findest du wahre Erfüllung im Leben',
-        sub: 'Lars Amend',
-        platform: 'youtube',
-        url: 'https://www.youtube.com/watch?v=ACGUgyhxKOk',
-        thumb: 'https://i.ytimg.com/vi/ACGUgyhxKOk/mqdefault.jpg'
-      }
+    title: 'Kommunikation & Wirkung',
+    text: 'Gespräche führen, Menschen gewinnen und verstehen, wie Einfluss funktioniert.',
+    books: [
+      { title: 'Wie man Freunde gewinnt', author: 'Dale Carnegie', asin: '3596709415' },
+      { title: 'Wie man das Eis bricht', author: 'Leil Lowndes', asin: '3868824693' },
+      { title: 'Power – Die 48 Gesetze der Macht', author: 'Robert Greene', asin: '3423348739' }
     ]
   }
 ];
@@ -821,24 +779,24 @@ const peGroups = [
 const peTabs = [
   {
     id: 'pe-podcasts',
-    label: 'Podcasts',
+    label: 'Podcasts & Hörbücher',
     icon: 'audio',
-    intro: 'Für unterwegs, beim Sport oder beim Kochen – über Persönlichkeit, Selbstvertrauen, Geld und Vermarktung.',
+    intro: 'Für unterwegs, beim Sport oder beim Kochen – Podcasts und Hörbücher über Mindset, Motivation, Selbstliebe und Geld.',
     groups: peGroups.filter((g) => g.tab === 'podcasts')
   },
   {
     id: 'pe-youtube',
     label: 'YouTube-Videos',
     icon: 'video',
-    intro: 'Vorträge und Gespräche zum Zurücklehnen – am besten mit Notizblock.',
+    intro: 'Kurze Impulse zu Disziplin, Routinen und Mindset – am besten mit Notizblock.',
     groups: peGroups.filter((g) => g.tab === 'youtube')
   },
   {
     id: 'pe-buecher',
     label: 'Bücher',
     icon: 'book',
-    intro: 'Zum Bestellen und Lesen – am besten von oben nach unten. Ein Klick auf das Cover öffnet das Buch auf Amazon.',
-    shelves: library
+    intro: 'Zum Bestellen und Lesen – such dir das Thema aus, das dich gerade am meisten interessiert. Ein Klick auf das Cover öffnet das Buch auf Amazon.',
+    shelves: peShelves
   }
 ];
 
@@ -1369,7 +1327,7 @@ const deepdive = [
       {
         label: 'Persönlichkeitsentwicklung',
         title: 'Inhalte für dein Wachstum',
-        text: 'Wachse als Persönlichkeit: mehr Selbstvertrauen, ein gesunder Umgang mit Geld und die Fähigkeit, dich selbst gut zu vermarkten. Wähl aus, wie du dich heute damit beschäftigen möchtest.',
+        text: 'Wachse als Persönlichkeit: mit starken Gewohnheiten, einem klaren Kopf und einem gesunden Umgang mit Geld. Wähl aus, wie du dich heute damit beschäftigen möchtest.',
         mindsetTabs: peTabs
       },
       {
@@ -1802,7 +1760,7 @@ function renderDashboard() {
         <a class="road-card ${pp === 100 ? 'is-complete' : ''} ${(isDeep ? d > 0 && pp < 100 : ph === nextPage) ? 'is-current' : ''}" href="${pageHref(ph)}">
           <span class="num ${isDeep ? 'num-icon' : ''}">${isDeep ? svg(ph.icon) : ph.n}</span>
           <span class="road-body">
-            ${isDeep ? '' : `<span class="road-top"><span class="pill">${state}</span><span class="road-meta">${d}/${req.length}<span class="meta-word"> erledigt</span></span>${isDeep ? '' : svg(ph.icon, 'ico road-ico')}</span>`}
+            <span class="road-top"><span class="pill">${state}</span><span class="road-meta">${d}/${req.length}<span class="meta-word"> erledigt</span></span>${isDeep ? '' : svg(ph.icon, 'ico road-ico')}</span>
             <span class="road-title">${ph.title}</span>
             ${isDeep ? '' : `<span class="road-short">${ph.short}</span>`}
             <span class="bar"><span class="bar-fill" style="width:${pp}%"></span></span>
@@ -1883,16 +1841,52 @@ function afterBlock() {
     </section>`;
 }
 
+// Gelesen / gehört / angeschaut: abgehakte Bücher & Medien rutschen ans Ende der Reihe und werden grau
+const SEEN_KEY = 'rb_seen';
+let seen = new Set();
+try {
+  seen = new Set(JSON.parse(localStorage.getItem(SEEN_KEY) || '[]'));
+} catch (e) {}
+
+function saveSeen() {
+  try {
+    localStorage.setItem(SEEN_KEY, JSON.stringify([...seen]));
+  } catch (e) {}
+}
+
+const bookKey = (b) => 'b' + (b.asin || b.title);
+const mediaKey = (m) => {
+  let h = 0;
+  for (const c of m.url) h = (h * 31 + c.charCodeAt(0)) | 0;
+  return 'm' + (h >>> 0).toString(36);
+};
+
+// Erledigte ans Ende, sonst bleibt die Reihenfolge; i = ursprüngliche Position (fürs Zurücksortieren)
+function shelfItems(items, key, render) {
+  return items
+    .map((x, i) => ({ x, i }))
+    .sort((a, b) => seen.has(key(a.x)) - seen.has(key(b.x)))
+    .map(({ x, i }) => render(x, i))
+    .join('');
+}
+
+function seenBtn(key, label) {
+  const on = seen.has(key);
+  return `<button type="button" class="seen-btn" data-seen="${key}" aria-pressed="${on}" title="${on ? 'Doch noch nicht erledigt' : label}" aria-label="${label}">${svg('check')}</button>`;
+}
+
 // Buch-Kachel: Cover (von Amazon, sonst gestaltetes Ersatz-Cover), Titel & Autor, Klick öffnet Amazon
-function bookItem(book) {
-  const url = `https://www.amazon.de/dp/${book.asin}`;
-  const cover = `https://m.media-amazon.com/images/P/${book.asin}.01.L.jpg`;
+function bookItem(book, i = 0) {
+  const url = book.url || `https://www.amazon.de/dp/${book.asin}`;
+  const cover = book.asin ? `https://m.media-amazon.com/images/P/${book.asin}.01.L.jpg` : '';
+  const key = bookKey(book);
   return `
-    <li>
-      <a class="book" href="${url}" target="_blank" rel="noopener" title="${book.title} auf Amazon ansehen">
+    <li class="${seen.has(key) ? 'is-seen' : ''}" data-key="${key}" data-i="${i}">
+      ${seenBtn(key, 'Als gelesen abhaken')}
+      <a class="book" href="${url}" target="_blank" rel="noopener" title="${book.title} ${book.asin ? 'auf Amazon ansehen' : 'suchen'}">
         <span class="book-cover">
           <span class="book-fallback"><strong>${book.title}</strong><small>${book.author}</small></span>
-          <img src="${cover}" alt="Cover: ${book.title}" loading="lazy" onload="if(this.naturalWidth<10)this.remove()" onerror="this.remove()" />
+          ${cover ? `<img src="${cover}" alt="Cover: ${book.title}" loading="lazy" onload="if(this.naturalWidth<10)this.remove()" onerror="this.remove()" />` : ''}
         </span>
         <span class="book-title">${book.title}</span>
         <span class="book-author">${book.author}</span>
@@ -1913,10 +1907,12 @@ const platforms = {
   instagram: { label: 'Instagram', icon: 'video' }
 };
 
-function mediaItem(m) {
+function mediaItem(m, i = 0) {
   const pf = platforms[m.platform] || platforms.youtube;
+  const key = mediaKey(m);
   return `
-    <li>
+    <li class="${seen.has(key) ? 'is-seen' : ''}" data-key="${key}" data-i="${i}">
+      ${seenBtn(key, m.platform === 'spotify' ? 'Als gehört abhaken' : 'Als angeschaut abhaken')}
       <a class="media is-${m.platform}" href="${m.url}" target="_blank" rel="noopener" title="${m.title}">
         <span class="media-thumb">
           <span class="media-fallback">${svg(pf.icon)}</span>
@@ -1958,7 +1954,7 @@ function renderSection(s) {
         <p class="shelf-label" title="${cat.text}"><span>${cat.title}</span></p>
         <div class="shelf-row">
           <button type="button" class="shelf-btn is-prev" data-shelf="-1" aria-label="Zurück">${svg('back')}</button>
-          <ol class="books js-scroll">${cat.books.map(bookItem).join('')}</ol>
+          <ol class="books js-scroll">${shelfItems(cat.books, bookKey, bookItem)}</ol>
           <button type="button" class="shelf-btn is-next" data-shelf="1" aria-label="Weiter">${svg('arrow')}</button>
         </div>`
       )
@@ -2013,7 +2009,7 @@ function renderSection(s) {
               <p class="shelf-label ${g.parent ? 'is-sub' : ''}" title="${g.text}"><span>${g.title}</span><em>${g.items.length}</em></p>
               <div class="shelf-row media-row">
                 <button type="button" class="shelf-btn is-prev" data-shelf="-1" aria-label="Zurück">${svg('back')}</button>
-                <ol class="media-list js-scroll">${g.items.map(mediaItem).join('')}</ol>
+                <ol class="media-list js-scroll">${shelfItems(g.items, mediaKey, mediaItem)}</ol>
                 <button type="button" class="shelf-btn is-next" data-shelf="1" aria-label="Weiter">${svg('arrow')}</button>
               </div>`
               )
@@ -2024,7 +2020,7 @@ function renderSection(s) {
               <p class="shelf-label" title="${c.text}"><span>${c.title}</span><em>${c.books.length}</em></p>
               <div class="shelf-row">
                 <button type="button" class="shelf-btn is-prev" data-shelf="-1" aria-label="Zurück">${svg('back')}</button>
-                <ol class="books js-scroll">${c.books.map(bookItem).join('')}</ol>
+                <ol class="books js-scroll">${shelfItems(c.books, bookKey, bookItem)}</ol>
                 <button type="button" class="shelf-btn is-next" data-shelf="1" aria-label="Weiter">${svg('arrow')}</button>
               </div>`
               )
@@ -2072,7 +2068,7 @@ function renderSection(s) {
     html += `
       <div class="shelf-row media-row">
         <button type="button" class="shelf-btn is-prev" data-shelf="-1" aria-label="Zurück">${svg('back')}</button>
-        <ol class="media-list js-scroll">${s.media.map(mediaItem).join('')}</ol>
+        <ol class="media-list js-scroll">${shelfItems(s.media, mediaKey, mediaItem)}</ol>
         <button type="button" class="shelf-btn is-next" data-shelf="1" aria-label="Weiter">${svg('arrow')}</button>
       </div>`;
   if (s.subTabs) {
@@ -2446,6 +2442,26 @@ function updateShelf(list) {
   row.classList.toggle('can-next', list.scrollLeft < max - 4);
 }
 
+// Abhaken direkt im Regal umsortieren (kein Neuaufbau, damit die Scroll-Position der Reihe bleibt)
+function toggleSeen(key) {
+  const on = !seen.has(key);
+  on ? seen.add(key) : seen.delete(key);
+  saveSeen();
+  document.querySelectorAll(`li[data-key="${key}"]`).forEach((li) => {
+    li.classList.toggle('is-seen', on);
+    const btn = li.querySelector('[data-seen]');
+    btn.setAttribute('aria-pressed', on);
+    btn.title = on ? 'Doch noch nicht erledigt' : btn.getAttribute('aria-label');
+    const list = li.parentElement;
+    setTimeout(() => {
+      [...list.children]
+        .sort((a, b) => a.classList.contains('is-seen') - b.classList.contains('is-seen') || a.dataset.i - b.dataset.i)
+        .forEach((x) => list.appendChild(x));
+      updateShelf(list);
+    }, on ? 260 : 0);
+  });
+}
+
 function updateShelves() {
   document.querySelectorAll('.shelf-row .js-scroll').forEach(updateShelf);
 }
@@ -2497,6 +2513,8 @@ document.addEventListener('click', (e) => {
     const list = $('#todoScroll');
     if (list) list.scrollTop = 0;
   }
+  const seenB = e.target.closest('[data-seen]');
+  if (seenB) toggleSeen(seenB.dataset.seen);
   const shelfBtn = e.target.closest('[data-shelf]');
   if (shelfBtn) {
     const list = shelfBtn.parentElement.querySelector('.js-scroll');
@@ -2539,6 +2557,8 @@ document.addEventListener('click', (e) => {
   if (e.target.closest('#resetBtn') && confirm('Wirklich alle Häkchen zurücksetzen?')) {
     done = new Set();
     saveDone();
+    seen = new Set();
+    saveSeen();
     render();
   }
 });

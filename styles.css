@@ -3611,10 +3611,10 @@ button.after-label:hover {
   height: 36px;
 }
 
-/* Deepdive-Karten wie im Onboarding: Icon + Titel + Balken */
+/* Deepdive-Karten wie im Onboarding: Icon + Titel, Status & Balken */
 @media (min-width: 901px) and (min-height: 560px) {
   .road-grid-dd .road-card {
-    grid-template-areas: "num title" "bar bar";
+    grid-template-areas: "num title" "top top" "bar bar";
   }
 }
 
@@ -3848,4 +3848,78 @@ a.seq-thumb:hover {
   .road-block .block-head h2 {
     margin-bottom: 0;
   }
+}
+
+/* Bücher & Medien abhaken: Häkchen oben rechts, erledigte grau am Ende der Reihe */
+.library .books li,
+.media-list li {
+  position: relative;
+  transition: opacity 0.25s;
+}
+
+.seen-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: rgba(46, 34, 24, 0.35);
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  box-shadow: 0 4px 10px -4px rgba(46, 34, 24, 0.6);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.seen-btn .ico {
+  width: 15px;
+  height: 15px;
+  stroke-width: 3;
+}
+
+.seen-btn:hover {
+  background: rgba(46, 34, 24, 0.6);
+  transform: scale(1.08);
+}
+
+.seen-btn:focus-visible {
+  outline: 2px solid var(--gold-2);
+  outline-offset: 2px;
+}
+
+li.is-seen .seen-btn {
+  background: var(--gold);
+  border-color: transparent;
+  color: #fff;
+}
+
+li.is-seen .book-cover,
+li.is-seen .media-thumb {
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+li.is-seen .book-title,
+li.is-seen .book-author,
+li.is-seen .media-title,
+li.is-seen .media-sub {
+  color: var(--muted);
+}
+
+/* Lange Wörter (z. B. „Persönlichkeitsentwicklung“) umbrechen statt die Kachel zu verbreitern */
+.library .books li,
+.media-list li {
+  min-width: 0;
+}
+
+.book-title,
+.book-fallback strong,
+.media-title {
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }

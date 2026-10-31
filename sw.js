@@ -1,7 +1,7 @@
 // Offline-Speicher für die Onboarding-App.
 // Eigene Dateien: erst aus dem Cache anzeigen, im Hintergrund aktualisieren.
 // Nach Änderungen an der Seite VERSION erhöhen, damit alle die neue Version bekommen.
-const VERSION = 'rb-onboarding-v39';
+const VERSION = 'rb-onboarding-v45';
 
 const APP_SHELL = [
   './',

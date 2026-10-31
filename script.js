@@ -846,7 +846,7 @@ const deepdive = [
         title: 'Live-Sessions & Recordings',
         text: 'Trag dir die Termine direkt in deinen Kalender ein – der Zoom-Link ist im Termin hinterlegt. Falls du mal nicht live dabei sein kannst, findest du alle Aufzeichnungen in der Recording-Playlist.',
         sessions: [
-          { title: 'Live-Sessions', when: 'Di, Mi & Do · 20:00 Uhr', zoom: 'https://us06web.zoom.us/j/87124426892', ics: 'nxt-live' },
+          { title: 'Live-Sessions', when: 'Di, Mi & Do · 20:00 Uhr', zoom: 'https://us06web.zoom.us/j/6878216076', ics: 'nxt-live' },
           { title: 'Community Call (Basic)', when: 'Jeden Sonntag · 18:00 Uhr', zoom: 'https://us06web.zoom.us/j/6878216076', ics: 'nxt-community' }
         ],
         links: [{ kind: 'video', label: 'Recording-Playlist', url: 'https://www.youtube.com/playlist?list=PLWrJYn6WXxo8' }]
@@ -2593,7 +2593,7 @@ window.addEventListener('hashchange', () => {
 // Wiederkehrende Kalendertermine (.ics) – Zoom-Link steht im Termin
 const calendarEvents = {
   teamcall: { title: 'Rise Beyond Teamcall', days: ['SU'], start: '2100', end: '2200' },
-  'nxt-live': { title: 'NXT Live-Session', days: ['TU', 'WE', 'TH'], start: '2000', end: '2100', url: 'https://us06web.zoom.us/j/87124426892' },
+  'nxt-live': { title: 'NXT Live-Session', days: ['TU', 'WE', 'TH'], start: '2000', end: '2100', url: 'https://us06web.zoom.us/j/6878216076' },
   'nxt-community': { title: 'NXT Community Call (Basic)', days: ['SU'], start: '1800', end: '1900', url: 'https://us06web.zoom.us/j/6878216076' }
 };
 

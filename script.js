@@ -258,6 +258,12 @@ const phases = [
         text: 'Notiere dir beim Lesen oder Hören die wichtigsten Erkenntnisse und frag dich jedes Mal:',
         quote: 'Was kann ich davon konkret in meinem Leben umsetzen?',
         tip: 'Teile deine wichtigsten Learnings regelmäßig mit deiner Mentorin.'
+      },
+      {
+        label: 'Mindset',
+        title: 'Dein Umfeld',
+        text: 'Die Menschen, mit denen du dich umgibst, prägen dein Denken. Schau dir an, warum dein Umfeld so wichtig für deine Entwicklung ist.',
+        videos: [{ title: 'Einarbeitung: Umfeld', desc: 'Giacomina Karras über die Rolle deines Umfelds.', url: 'https://www.youtube.com/watch?v=0XxorZj0we0' }]
       }
     ]
   },
@@ -272,8 +278,8 @@ const phases = [
     tasks: [
       { id: 'b0', text: 'Signale aus Syntra in MT5 umsetzen' },
       { id: 'b1', text: 'Kurs „Forex Basics“ in WOW abschließen' },
-      { id: 'b2', text: 'Anleitungs-Playlist zum Echtgeldkonto ansehen' },
-      { id: 'b3', text: 'Bei TradeQuo registrieren' },
+      { id: 'b2', text: 'Links & Bonus-Infos für dein Echtgeldkonto bei deiner Mentorin holen' },
+      { id: 'b3', text: 'Echtgeldkonto erstellen' },
       { id: 'b4', text: '$150 einzahlen & MT-Konto verbinden' },
       { id: 'b6', text: 'Erste Copy-Paste-Trades auf dem Echtgeldkonto umsetzen' }
     ],
@@ -286,15 +292,9 @@ const phases = [
       },
       {
         label: 'Echtgeldkonto',
-        title: 'Switch auf Echtgeldkonto',
-        text: 'So eröffnest du dein Echtgeldkonto – Schritt für Schritt:',
-        steps: [
-          { t: 'Anleitung ansehen', d: 'Die Playlist erklärt die Account-Erstellung und die Einzahlung.', link: { kind: 'video', label: 'Playlist ansehen', url: 'https://youtube.com/playlist?list=PLj8yRdYMLscxU5cB2_B7LbLLi4BUJ14qg&si=TyGYlH8H6DYTQt8v' } },
-          { t: 'Registrieren', d: 'Erstelle deinen Account bei TradeQuo über diesen Link.', link: { kind: 'link', label: 'Zur Registrierung', url: 'https://my.tradequo.com/register?referral=01a12fb2-8c01-7354-a122-8298778949b0' } },
-          { t: '$150 einzahlen', d: 'Mache eine Einzahlung von <strong>$150</strong> und verbinde dein MT-Konto (MetaTrader).' },
-          { t: 'Bonus sichern', d: 'Sobald Konto, Einzahlung und MT-Verbindung stehen: Aktionscode eingeben und Bonus auf die Einzahlung erhalten.', link: { kind: 'link', label: 'tradequo.com/promo', url: 'https://tradequo.com/promo' } },
-          { t: 'Loslegen', d: 'Setze Copy-Paste-Trading jetzt auf deinem Echtgeldkonto um und generiere deinen ersten Cashflow.' }
-        ]
+        title: 'Zeit für dein Echtgeldkonto',
+        text: 'Du kennst jetzt die Basics – <strong>jetzt wird es Zeit, dein Echtgeldkonto zu erstellen</strong>. Geh dafür auf deine Mentorin zu: Sie schickt dir alle Links, die Anleitung und die Infos zu den Boni, damit du dein Konto richtig eröffnest.',
+        tip: 'Erst die Links von deiner Mentorin holen, dann registrieren – nur so bekommst du die Boni.'
       }
     ]
   },
@@ -381,8 +381,8 @@ const phases = [
       'Neben Forex und Automationen ist der Aktienmarkt ein wichtiger Baustein für deinen langfristigen Vermögensaufbau. Hier lernst du die Grundlagen und eröffnest dein Konto.',
     tasks: [
       { id: 'a1', text: 'Kurs „Stocks Basics“ abschließen' },
-      { id: 'a2', text: 'Bei xConnectly registrieren' },
-      { id: 'a3', text: 'eToro Account erstellen' },
+      { id: 'a2', text: 'Links & Bonus-Infos für dein Aktien-Konto bei deiner Mentorin holen' },
+      { id: 'a3', text: 'Aktien-Konto erstellen' },
       { id: 'a4', text: 'Erste Investments umsetzen' }
     ],
     sections: [
@@ -394,13 +394,9 @@ const phases = [
       },
       {
         label: 'Aktien · Echtgeldkonto',
-        title: 'Aktien auf Echtgeldkonto',
-        text: 'So eröffnest du dein Aktien-Konto – Schritt für Schritt:',
-        steps: [
-          { t: 'xConnectly', d: 'Registriere dich über diesen Link.', link: { kind: 'link', label: 'Registrieren', url: 'https://xconnectly.com/portal-signup?ref_id=XOP73UBZRDQT' } },
-          { t: 'eToro Account', d: 'Die Anleitung zeigt dir die Account-Erstellung.', link: { kind: 'video', label: 'Anleitung ansehen', url: 'https://youtube.com/playlist?list=PLFRDC10MBhTk&si=cedX7GaSlPiw1nHk' } },
-          { t: 'Investieren', d: 'Nutze die Listen von Miguel für deine ersten Investments.' }
-        ]
+        title: 'Zeit für dein Aktien-Konto',
+        text: 'Du kennst jetzt die Aktien-Basics – <strong>jetzt wird es Zeit, dein Echtgeldkonto für Aktien zu erstellen</strong>. Geh dafür auf deine Mentorin zu: Sie schickt dir alle Links, die Anleitung und die Infos zu den Boni, damit du dein Konto richtig eröffnest.',
+        tip: 'Erst die Links von deiner Mentorin holen, dann registrieren – nur so bekommst du die Boni.'
       }
     ]
   },
@@ -413,11 +409,18 @@ const phases = [
     intro:
       'Du hast die Grundlagen drauf – jetzt teilst du, was du tust. Marketing heißt hier vor allem: echte Gespräche mit Menschen, die du schon kennst.',
     tasks: [
+      { id: 'mk0', text: 'Video „Why Network“ ansehen' },
       { id: 'mk1', text: 'Marketing-Video ansehen & 2 Learnings an deine Mentorin senden' },
       { id: 'mk2', text: 'Kontaktliste schreiben' },
       { id: 'mk3', text: 'Eine Person auswählen, der du mehr erzählen möchtest' }
     ],
     sections: [
+      {
+        label: 'Marketing',
+        title: 'Warum Network Marketing?',
+        text: 'Bevor es losgeht: Schau dir an, warum Network Marketing so ein starkes Business-Modell ist.',
+        videos: [{ title: 'Why Network', desc: 'Meant2Be', url: 'https://youtu.be/v1IBxJi64a0' }]
+      },
       {
         label: 'Marketing',
         title: 'Video & Learnings',
@@ -714,6 +717,7 @@ const peGroups = [
 
 // Persönlichkeitsentwicklung: Bücher grob nach Themen (deutsche Ausgaben, asin = ISBN-10)
 // Ohne asin: eigene url angeben, es erscheint das gestaltete Ersatz-Cover
+// cover: eigenes Cover-Bild, falls Amazon zur asin keins hat
 const peShelves = [
   {
     title: 'Geld & Vermögen',
@@ -735,7 +739,12 @@ const peShelves = [
       { title: 'Der Schlüssel zum Erfolg', author: 'Berthold Güntner', asin: '3837006360' },
       { title: 'Entscheidung: Umfeld', author: 'Dirk Kreuter', asin: '3987551585' },
       { title: 'The Diary of a CEO', author: 'Steven Bartlett', asin: '3424202959' },
-      { title: 'Shoe Dog', author: 'Phil Knight', asin: '3960923945' }
+      { title: 'Shoe Dog', author: 'Phil Knight', asin: '3960923945' },
+      { title: 'Everything I Know at the Top I Learned at the Bottom', author: 'Dexter Yager', asin: '0842349030', cover: 'https://covers.openlibrary.org/b/isbn/0842349030-L.jpg' },
+      { title: 'Moon Shot – The Ultimate Guide to Outrageous Network Marketing Success', author: 'Sandro Cazzato', asin: '1544550383' },
+      { title: 'I Dare You!', author: 'Frazer Brookes', url: 'https://www.amazon.it/dp/1916016707', cover: 'https://m.media-amazon.com/images/I/71PKfQIfiRL._SY445_.jpg' },
+      { title: 'Pay the F**king Price', author: 'Mario Oreggia', asin: '2956884263', url: 'https://www.amazon.it/dp/2956884263' },
+      { title: 'The Game of Conquering', author: 'Rob L. Sperry', asin: '1734381701' }
     ]
   },
   {
@@ -762,7 +771,8 @@ const peShelves = [
       { title: 'The Secret – Das Geheimnis', author: 'Rhonda Byrne', asin: '344234221X' },
       { title: 'Die 7 Säulen der Persönlichkeitsentwicklung', author: 'Ben Klarstein', asin: '3989370103' },
       { title: 'Wer klar denkt, entscheidet besser', author: 'Shane Parrish', asin: '3442180074' },
-      { title: 'Schnelles Denken, langsames Denken', author: 'Daniel Kahneman', asin: '3328100342' }
+      { title: 'Schnelles Denken, langsames Denken', author: 'Daniel Kahneman', asin: '3328100342' },
+      { title: 'Wo ein Fuck it, da ein Weg', author: 'Andrea Weidlich', asin: '3747404901' }
     ]
   },
   {
@@ -771,7 +781,18 @@ const peShelves = [
     books: [
       { title: 'Wie man Freunde gewinnt', author: 'Dale Carnegie', asin: '3596709415' },
       { title: 'Wie man das Eis bricht', author: 'Leil Lowndes', asin: '3868824693' },
-      { title: 'Power – Die 48 Gesetze der Macht', author: 'Robert Greene', asin: '3423348739' }
+      { title: 'Power – Die 48 Gesetze der Macht', author: 'Robert Greene', asin: '3423348739' },
+      { title: 'Unbox your Network', author: 'Tobias Beck', asin: '3949458247' },
+      { title: 'Building a StoryBrand', author: 'Donald Miller', asin: '0718033329' },
+      { title: 'Dig Your Well Before You’re Thirsty', author: 'Harvey Mackay', asin: '0385485468' }
+    ]
+  },
+  {
+    title: 'Leadership',
+    text: 'Vorangehen, Verantwortung übernehmen und ein Team aufbauen, das zusammenhält.',
+    books: [
+      { title: '8 Lessons in Military Leadership for Entrepreneurs', author: 'Robert T. Kiyosaki', asin: '1612680534' },
+      { title: 'Leaders Eat Last', author: 'Simon Sinek', asin: '1591848016' }
     ]
   }
 ];
@@ -846,8 +867,8 @@ const deepdive = [
         title: 'Live-Sessions & Recordings',
         text: 'Trag dir die Termine direkt in deinen Kalender ein – der Zoom-Link ist im Termin hinterlegt. Falls du mal nicht live dabei sein kannst, findest du alle Aufzeichnungen in der Recording-Playlist.',
         sessions: [
-          { title: 'Live-Sessions', when: 'Di, Mi & Do · 20:00 Uhr', zoom: 'https://us06web.zoom.us/j/6878216076', ics: 'nxt-live' },
-          { title: 'Community Call (Basic)', when: 'Jeden Sonntag · 18:00 Uhr', zoom: 'https://us06web.zoom.us/j/6878216076', ics: 'nxt-community' }
+          { title: 'Live-Sessions', when: 'Di & Do · 20:00 Uhr', zoom: 'https://us06web.zoom.us/j/6878216076', ics: 'nxt-live' },
+          { title: 'Community Call (Basic)', when: 'Jeden Sonntag · 19:00 Uhr', zoom: 'https://us06web.zoom.us/j/6878216076', ics: 'nxt-community' }
         ],
         links: [{ kind: 'video', label: 'Recording-Playlist', url: 'https://www.youtube.com/playlist?list=PLWrJYn6WXxo8' }]
       },
@@ -1067,9 +1088,6 @@ const deepdive = [
           { title: 'Virales TikTok 5', sub: 'TikTok', platform: 'tiktok', url: 'https://vm.tiktok.com/ZGd96Vobj/' },
           { title: 'Virales TikTok 6', sub: 'TikTok', platform: 'tiktok', url: 'https://vm.tiktok.com/ZGd963XVS/' },
           { title: 'Virales TikTok 7', sub: 'TikTok', platform: 'tiktok', url: 'https://vm.tiktok.com/ZGd964Puy/' },
-          { title: 'Virales TikTok 8', sub: '@fenja_doerr', platform: 'tiktok', url: 'https://vm.tiktok.com/ZGdxekMwG/' },
-          { title: 'Virales TikTok 9', sub: '@fenja_doerr', platform: 'tiktok', url: 'https://vm.tiktok.com/ZGdxe2jCD/' },
-          { title: 'Virales TikTok 10', sub: '@fenja_doerr', platform: 'tiktok', url: 'https://vm.tiktok.com/ZGdxefHVe/' },
           { title: 'Virales Reel 1', sub: 'Instagram', platform: 'instagram', url: 'https://www.instagram.com/reel/Da7ORiYgw38/' },
           { title: 'Virales Reel 2', sub: 'Instagram', platform: 'instagram', url: 'https://www.instagram.com/reel/DaxOiXVtiwJ/' },
           { title: 'Virales Reel 3', sub: 'Instagram', platform: 'instagram', url: 'https://www.instagram.com/reel/DaxIwFOAohw/' },
@@ -1212,8 +1230,11 @@ const deepdive = [
       {
         label: 'Helix',
         title: 'Helix in der Praxis',
-        text: 'Im Teamcall siehst du, wie Helix in der Praxis eingesetzt wird. Notiere dir offene Fragen und besprich sie mit deiner Mentorin.',
-        videos: [{ title: 'Helix im Teamcall', desc: 'Rise Beyond Teamcall vom 25.10.2026.', url: 'https://www.youtube.com/watch?v=ME1Fo__EMR4' }]
+        text: 'Schau dir zuerst die Einarbeitung zu Helix an. Im Teamcall siehst du danach, wie Helix in der Praxis eingesetzt wird. Notiere dir offene Fragen und besprich sie mit deiner Mentorin.',
+        videos: [
+          { title: 'Einarbeitung: Helix', desc: 'Giacomina Karras erklärt dir Helix.', url: 'https://youtu.be/m86YEnoPQ8E' },
+          { title: 'Helix im Teamcall', desc: 'Rise Beyond Teamcall vom 25.10.2026.', url: 'https://www.youtube.com/watch?v=ME1Fo__EMR4' }
+        ]
       }
     ]
   },
@@ -1878,7 +1899,7 @@ function seenBtn(key, label) {
 // Buch-Kachel: Cover (von Amazon, sonst gestaltetes Ersatz-Cover), Titel & Autor, Klick öffnet Amazon
 function bookItem(book, i = 0) {
   const url = book.url || `https://www.amazon.de/dp/${book.asin}`;
-  const cover = book.asin ? `https://m.media-amazon.com/images/P/${book.asin}.01.L.jpg` : '';
+  const cover = book.cover || (book.asin ? `https://m.media-amazon.com/images/P/${book.asin}.01.L.jpg` : '');
   const key = bookKey(book);
   return `
     <li class="${seen.has(key) ? 'is-seen' : ''}" data-key="${key}" data-i="${i}">
@@ -2593,8 +2614,8 @@ window.addEventListener('hashchange', () => {
 // Wiederkehrende Kalendertermine (.ics) – Zoom-Link steht im Termin
 const calendarEvents = {
   teamcall: { title: 'Rise Beyond Teamcall', days: ['SU'], start: '2100', end: '2200' },
-  'nxt-live': { title: 'NXT Live-Session', days: ['TU', 'WE', 'TH'], start: '2000', end: '2100', url: 'https://us06web.zoom.us/j/6878216076' },
-  'nxt-community': { title: 'NXT Community Call (Basic)', days: ['SU'], start: '1800', end: '1900', url: 'https://us06web.zoom.us/j/6878216076' }
+  'nxt-live': { title: 'NXT Live-Session', days: ['TU', 'TH'], start: '2000', end: '2100', url: 'https://us06web.zoom.us/j/6878216076' },
+  'nxt-community': { title: 'NXT Community Call (Basic)', days: ['SU'], start: '1900', end: '2000', url: 'https://us06web.zoom.us/j/6878216076' }
 };
 
 function downloadIcs(id = 'teamcall') {

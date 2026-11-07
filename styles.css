@@ -3316,6 +3316,75 @@ button.after-label:hover {
   justify-content: center;
 }
 
+/* Fortschritt übertragen (QR-Code) */
+.sync-modal {
+  width: min(380px, 100%);
+  padding: 26px 22px 20px;
+}
+
+.sync-modal h2 {
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+}
+
+.sync-text {
+  margin: 0 0 14px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.sync-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: 0;
+  background: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.sync-qr {
+  width: min(260px, 72vw);
+  margin: 0 auto 14px;
+  padding: 8px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.sync-qr svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sync-paste {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  text-align: left;
+}
+
+.sync-paste label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.sync-paste div {
+  display: flex;
+  gap: 8px;
+}
+
+.sync-note {
+  margin: 12px 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
 }

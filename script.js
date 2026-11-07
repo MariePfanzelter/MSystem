@@ -2682,3 +2682,142 @@ function installApp() {
 
 if (isStandalone()) document.documentElement.classList.add('is-app');
 
+
+// ─────────────────────────────────────────────────────────────
+//  FORTSCHRITT ÜBERTRAGEN (QR-Code / Link)
+//  Der Stand steckt im Link hinter dem „#“ – der geht an keinen Server,
+//  sondern nur direkt von Gerät zu Gerät.
+// ─────────────────────────────────────────────────────────────
+
+const SYNC_KEYS = [STORE_KEY, CUSTOM_KEY, DD_EDIT_KEY, SEEN_KEY, 'rb_track', 'rb_dd_intro'];
+
+const toB64 = (bytes) => btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+const fromB64 = (s) => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), (c) => c.charCodeAt(0));
+const pipeBytes = async (bytes, stream) => new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(stream)).arrayBuffer());
+
+async function packSync() {
+  const data = {};
+  SYNC_KEYS.forEach((k) => {
+    try {
+      const v = localStorage.getItem(k);
+      if (v) data[k] = v;
+    } catch (e) {}
+  });
+  data[STORE_KEY] = [...done].join('.');
+  const bytes = new TextEncoder().encode(JSON.stringify(data));
+  // „z“ = gepackt (kürzerer Link, kleinerer QR-Code), „j“ = ungepackt für ältere Browser
+  if (window.CompressionStream) return 'z' + toB64(await pipeBytes(bytes, new CompressionStream('deflate-raw')));
+  return 'j' + toB64(bytes);
+}
+
+async function unpackSync(code) {
+  let bytes = fromB64(code.slice(1));
+  if (code[0] === 'z') bytes = await pipeBytes(bytes, new DecompressionStream('deflate-raw'));
+  const data = JSON.parse(new TextDecoder().decode(bytes));
+  if (!data || typeof data !== 'object') throw new Error('leer');
+  return data;
+}
+
+const syncCodeFrom = (text) => ((String(text).match(/#sync=([\w-]+)/) || [])[1] || '').trim();
+
+async function importSync(code) {
+  let data;
+  try {
+    data = await unpackSync(code);
+  } catch (e) {
+    return toast('Der Link ist leider ungültig oder unvollständig.', 'phone');
+  }
+  if (!confirm('Fortschritt von deinem anderen Gerät übernehmen?\nDer bisherige Stand auf diesem Gerät wird dabei ersetzt.')) return false;
+  SYNC_KEYS.forEach((k) => {
+    try {
+      if (data[k] != null) localStorage.setItem(k, data[k]);
+      else localStorage.removeItem(k);
+    } catch (e) {}
+  });
+  done = new Set(String(data[STORE_KEY] || '').split('.').filter(Boolean));
+  saveDone();
+  history.replaceState(null, '', location.pathname + '#/');
+  location.reload();
+  return true;
+}
+
+// Link mit #sync=… geöffnet (z. B. per QR-Code gescannt)
+function checkSyncLink() {
+  const code = syncCodeFrom(location.hash);
+  if (!code) return;
+  history.replaceState(null, '', location.pathname + '#/');
+  importSync(code).then((ok) => ok || render());
+}
+checkSyncLink();
+window.addEventListener('hashchange', checkSyncLink);
+
+function loadQrLib() {
+  if (window.qrcode) return Promise.resolve();
+  return new Promise((ok, fail) => {
+    const s = document.createElement('script');
+    s.src = 'assets/vendor/qrcode.js';
+    s.onload = ok;
+    s.onerror = fail;
+    document.head.appendChild(s);
+  });
+}
+
+async function openSync() {
+  if (document.getElementById('syncBox')) return;
+  const link = `${location.origin}${location.pathname}#sync=${await packSync()}`;
+  const box = document.createElement('div');
+  box.id = 'syncBox';
+  box.className = 'modal-backdrop';
+  box.innerHTML = `
+    <div class="modal sync-modal" role="dialog" aria-modal="true" aria-labelledby="syncTitle">
+      <button type="button" class="sync-close" data-sync-close title="Schließen" aria-label="Schließen">×</button>
+      <h2 id="syncTitle">Auf anderes Gerät übertragen</h2>
+      <p class="sync-text">Scanne den Code mit der Kamera deines anderen Geräts – dein Fortschritt wird dort übernommen.</p>
+      <div class="sync-qr" id="syncQr"></div>
+      <button type="button" class="btn btn-sm" data-sync-copy>${svg('link')}<span>Link kopieren</span></button>
+      <form class="sync-paste" data-sync-paste>
+        <label for="syncInput">Link von einem anderen Gerät einfügen</label>
+        <div>
+          <input id="syncInput" type="text" class="custom-input" placeholder="https://…#sync=…" autocomplete="off" />
+          <button type="submit" class="icon-btn icon-sm" title="Übernehmen" aria-label="Übernehmen">${svg('check')}</button>
+        </div>
+      </form>
+      <p class="sync-note">Die Daten gehen direkt von Gerät zu Gerät und werden nirgends gespeichert.</p>
+    </div>`;
+  box.dataset.link = link;
+  document.body.appendChild(box);
+  try {
+    await loadQrLib();
+    const qr = qrcode(0, 'L');
+    qr.addData(link);
+    qr.make();
+    $('#syncQr').innerHTML = qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
+  } catch (e) {
+    $('#syncQr').innerHTML = '<p class="sync-text">QR-Code nicht verfügbar – nutze „Link kopieren“.</p>';
+  }
+}
+
+document.addEventListener('click', (e) => {
+  if (e.target.closest('#syncBtn')) return openSync();
+  const box = document.getElementById('syncBox');
+  if (!box) return;
+  if (e.target === box || e.target.closest('[data-sync-close]')) return box.remove();
+  if (e.target.closest('[data-sync-copy]')) {
+    const link = box.dataset.link;
+    (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject())
+      .then(() => toast('Link kopiert – öffne ihn auf deinem anderen Gerät.', 'link'))
+      .catch(() => prompt('Link kopieren:', link));
+  }
+});
+
+document.addEventListener('submit', (e) => {
+  if (!e.target.closest('[data-sync-paste]')) return;
+  e.preventDefault();
+  const code = syncCodeFrom($('#syncInput').value);
+  if (!code) return toast('Bitte füge den kompletten Link ein.', 'link');
+  importSync(code);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.getElementById('syncBox')?.remove();
+});
